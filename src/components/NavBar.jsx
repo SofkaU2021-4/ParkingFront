@@ -22,9 +22,9 @@ const NavBar = () => {
             
         </div>
         <div className="flex mx-auto max-w-screen-xl my-10 ">
-                <div className= "flex bg-white border-2 border-gray-400 ml-3  "  >
+                <div className= "flex bg-white border-2 border-gray-400 ml-2"  >
                         <i className="  self-center fas fa-search text-gray-500 pl-4 mr-3"></i>
-                        <input onChange={(e) => setBusqueda(e.target.value)} placeholder="Buscar" className= "outline-none w-96 h-9 rounded-xl" type="text"/>
+                        <input onChange={(e) => setBusqueda(e.target.value)} placeholder="Buscar" className= " self-center outline-none w-96 h-9 rounded-xl" type="text"/>
                 </div>
                 <button className=" bg-gray-400 text-white px-6">Acuales</button>
                 <button className=" bg-gray-400 text-white px-6 ">Egresados</button>
@@ -32,7 +32,7 @@ const NavBar = () => {
                     <button className=" bg-blue-500  text-white rounded-3xl px-6 py-3">Nuevo vehiculo  <i className="fas fa-plus-circle ml-4"></i></button>
                 </div>
         </div>
-
+        <div className=" shadow-inner"></div>
 
     </div>
 

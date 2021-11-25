@@ -3,6 +3,7 @@ import {BrowserRouter,Routes,Route} from "react-router-dom";
 import Layout from './layout/Layout';
 import { useState } from 'react';
 import { BusquedaContext } from './context/BusquedaContext';
+import Actuales from './page/Actuales';
 
 function App() {
 
@@ -13,7 +14,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Layout/>}>
-            <Route path='' element={<h1></h1>}/>
+            <Route path='' element={<Actuales/>}/>
           </Route>
         </Routes>
       </BrowserRouter>

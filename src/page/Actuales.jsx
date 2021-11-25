@@ -3,7 +3,8 @@ import Cards from '../components/Cards'
 
 const Actuales = () => {
     return (
-        <div className= "mx-auto max-w-screen-xl flex flex-wrap justify-center   ">
+        <div className= "mx-auto max-w-screen-xl flex flex-wrap justify-between   ">
+            <Cards/>
             <Cards/>
             <Cards/>
             <Cards/>

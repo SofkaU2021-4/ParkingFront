@@ -1,8 +1,7 @@
-import { createContext,useContext } from "react";
+import { createContext, useContext } from "react";
 
-export const BusquedaContext=createContext(null);
+export const BusquedaContext = createContext(null);
 
-
-export const useBuscado=()=>{
-    return useContext(BusquedaContext);
-}
+export const useBuscado = () => {
+  return useContext(BusquedaContext);
+};

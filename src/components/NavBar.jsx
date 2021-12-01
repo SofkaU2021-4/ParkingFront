@@ -3,24 +3,20 @@ import logo from'../media/parking-02.png'
 import { useBuscado } from '../context/BusquedaContext'
 import ModalNuevoVehiculo from './ModalNuevoVehiculo'
 
-
 const NavBar = () => {
-
 
     const {setBusqueda}=useBuscado()
 
     return (
-    <div> 
+    <div>
         <div className="flex flex-col  bg-gray-200 shadow-sm">
             <div className="flex justify-between max-w-screen-xl mx-auto  w-full">
                 <img className=" self-start w-72" src={logo}/>
                 <div className="flex self-center  text-xl  " >
                     <span className=" text-gray-400">#</span>
-                    <span className=" ml-2 bg-white w-8 text-center font-bold shadow-xs">30</span>       
+                    <span className=" ml-2 bg-white w-8 text-center font-bold shadow-xs">30</span>
                 </div>
-
             </div>
-            
         </div>
         <div className="flex mx-auto max-w-screen-xl my-10  justify-between flex-wrap">
             <div className=" flex flex-wrap">
@@ -32,13 +28,9 @@ const NavBar = () => {
                 <button className=" bg-gray-400 text-white px-6 ">Egresados</button>
             </div>
             <ModalNuevoVehiculo/>
-            
         </div>
         <div className=" shadow-inner"></div>
-
     </div>
-
-       
     )
 }
 

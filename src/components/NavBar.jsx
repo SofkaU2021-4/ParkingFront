@@ -3,9 +3,9 @@ import logo from'../media/parking-02.png'
 import { useBuscado } from '../context/BusquedaContext'
 import ModalNuevoVehiculo from './ModalNuevoVehiculo'
 import { useConsulta } from '../context/ConsultaContext'
+
 const NavBar = () => {
     const {vehiculos}=useConsulta();
-
     const {setBusqueda}=useBuscado()
 
     return (
@@ -23,7 +23,7 @@ const NavBar = () => {
             <div className=" flex flex-wrap">
                 <div className= "flex bg-white border-2 border-gray-400 ml-2"  >
                     <i className="  self-center fas fa-search text-gray-500 pl-4 mr-3"></i>
-                    <input onChange={(e) => setBusqueda(e.target.value)} placeholder="Buscar" className= " self-center outline-none w-96 h-9 rounded-xl" type="text"/>
+                    <input onChange={(e) => setBusqueda(e.target.value.toUpperCase())} placeholder="Buscar" className= " self-center outline-none w-96 h-9 rounded-xl" type="text"/>
                 </div>
                 <button className=" bg-gray-400 text-white px-6">Actuales</button>
                 <button className=" bg-gray-400 text-white px-6 ">Egresados</button>

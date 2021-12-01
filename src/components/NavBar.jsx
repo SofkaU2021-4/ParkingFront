@@ -2,8 +2,9 @@ import React from 'react'
 import logo from'../media/parking-02.png'
 import { useBuscado } from '../context/BusquedaContext'
 import ModalNuevoVehiculo from './ModalNuevoVehiculo'
-
+import { useConsulta } from '../context/ConsultaContext'
 const NavBar = () => {
+    const {vehiculos}=useConsulta();
 
     const {setBusqueda}=useBuscado()
 
@@ -14,7 +15,7 @@ const NavBar = () => {
                 <img className=" self-start w-72" src={logo}/>
                 <div className="flex self-center  text-xl  " >
                     <span className=" text-gray-400">#</span>
-                    <span className=" ml-2 bg-white w-8 text-center font-bold shadow-xs">30</span>
+                    <span className=" ml-2 bg-white w-8 text-center font-bold shadow-xs">{vehiculos.length}</span>
                 </div>
             </div>
         </div>

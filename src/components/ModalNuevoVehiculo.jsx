@@ -4,9 +4,11 @@ import { Box } from '@mui/system';
 import { useState, useEffect ,useRef} from 'react';
 import useFormData from '../hooks/useFormData';
 import {postDb} from "../utils/Postdb"
+import { useConsulta } from '../context/ConsultaContext'
 
 const ModalNuevoVehiculo = () => {
 
+  const {setConsulta}=useConsulta();
   const{form, formData, updateFormData} = useFormData();
 
   const [open, setOpen] = useState(false);
@@ -34,7 +36,10 @@ const ModalNuevoVehiculo = () => {
 
   const submitForm = async (e) => {
       e.preventDefault();
-      await postDb(formData);/////{}
+
+      await postDb(formData);
+      handleClose();
+      setConsulta(true);
     }
 
   return (
@@ -61,6 +66,7 @@ const ModalNuevoVehiculo = () => {
             </Box>
           </DialogTitle>
         <form ref={form} onChange={updateFormData} onSubmit={submitForm}>
+
           <div className="m-7 mt-4 texto-perfil">
             <div className="grid grid-cols-1 gap-2">
               <div>

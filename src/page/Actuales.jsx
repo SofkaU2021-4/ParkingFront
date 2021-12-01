@@ -1,18 +1,21 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import Cards from '../components/Cards'
 import {getDb}from "../utils/Getdb"
-
+import { useConsulta } from '../context/ConsultaContext'
 
 const Actuales = () => {
-    const [vehiculos ,setVehiculos]=useState([]);
+    const {consulta ,setConsulta, setVehiculos,vehiculos}=useConsulta();
+
     useEffect(()=>{
-        getDb(setVehiculos);
-    },[])
+        if (consulta) {
+            getDb(setVehiculos,setConsulta);
+        }
+    },[consulta])
 
     return (
         <div className= "mx-auto max-w-screen-xl flex flex-wrap justify-between   ">
         {vehiculos.map((item)=>{
-            return (<Cards key={item.id}  item={item}/>)////key
+            return (<Cards key={item.id}  item={item} />)
         })}
         </div>
     )

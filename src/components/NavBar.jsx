@@ -1,6 +1,7 @@
 import React from 'react'
 import logo from'../media/parking-02.png'
 import { useBuscado } from '../context/BusquedaContext'
+import ModalNuevoVehiculo from './ModalNuevoVehiculo'
 
 
 const NavBar = () => {
@@ -30,7 +31,7 @@ const NavBar = () => {
                 <button className=" bg-gray-400 text-white px-6">Actuales</button>
                 <button className=" bg-gray-400 text-white px-6 ">Egresados</button>
             </div>
-            <button className=" bg-blue-500  text-white rounded-3xl px-6 py-3">Nuevo vehiculo  <i className="fas fa-plus-circle fa-lg ml-4"></i></button>
+            <ModalNuevoVehiculo/>
             
         </div>
         <div className=" shadow-inner"></div>

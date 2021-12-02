@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const editarDb = (item, id) => {
+export const editarDb = (item, id, toast) => {
   const options = {
     method: "PATCH",
     url: "http://localhost:8080/api/vehiculo",
@@ -11,9 +11,25 @@ export const editarDb = (item, id) => {
   axios
     .request(options)
     .then(function (response) {
-      console.log(response.data);
+      toast.success("Actualizacion con exito", {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
     })
     .catch(function (error) {
-      console.error(error);
+      toast.error("Error!! No Se Actualizo", {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
     });
 };

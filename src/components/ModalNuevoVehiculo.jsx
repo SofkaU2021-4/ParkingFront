@@ -5,6 +5,8 @@ import { useState, useEffect ,useRef} from 'react';
 import useFormData from '../hooks/useFormData';
 import {postDb} from "../utils/Postdb"
 import { useConsulta } from '../context/ConsultaContext'
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ModalNuevoVehiculo = () => {
 
@@ -36,14 +38,14 @@ const ModalNuevoVehiculo = () => {
 
   const submitForm = async (e) => {
       e.preventDefault();
-      await postDb(formData);
+      await postDb(formData,toast);
       handleClose();
       setConsulta(true);
     }
 
   return (
     <div >
-      <button className=" hover:bg-blue-700  bg-blue-500  text-white rounded-3xl px-6 py-3" onClick={handleClickOpen('paper')}>Nuevo vehiculo  <i className="fas fa-plus-circle fa-lg ml-4"></i></button>
+      <button className=" hover:bg-blue-700  bg-blue-500  text-white rounded-3xl px-6 py-2" onClick={handleClickOpen('paper')}>Nuevo vehiculo  <i className="fas fa-plus-circle fa-lg ml-4"></i></button>
         <Dialog
           className= "bg-black bg-opacity-50"
           open={open}

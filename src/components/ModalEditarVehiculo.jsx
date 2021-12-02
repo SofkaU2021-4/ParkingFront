@@ -5,6 +5,9 @@ import { useState, useEffect ,useRef} from 'react';
 import useFormData from '../hooks/useFormData';
 import { editarDb } from '../utils/Patchdb'
 import { useConsulta } from '../context/ConsultaContext'
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const ModalEditarVehiculo = ({item}) => {
 
@@ -37,7 +40,7 @@ const ModalEditarVehiculo = ({item}) => {
   const submitForm = async (e) => {
       e.preventDefault();
       let data=(formData.placa?formData:item);
-      await editarDb(data,item.id);
+      await editarDb(data,item.id,toast);
       handleClose();
       setConsulta(true);
     }

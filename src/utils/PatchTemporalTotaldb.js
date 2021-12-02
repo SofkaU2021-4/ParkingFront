@@ -1,16 +1,18 @@
 import axios from "axios";
 
-export const deleteDb = (id, setConsulta, toast) => {
+export const PatchTemporalTotaldb = (item, setConsulta, toast) => {
   const options = {
-    method: "DELETE",
-    url: `http://localhost:8080/api/vehiculo/${id}`,
+    method: "PATCH",
+    url: "http://localhost:8080/api/vehiculo/temporal",
+    headers: { "Content-Type": "application/json" },
+    data: item,
   };
 
   axios
     .request(options)
     .then(function (response) {
       setConsulta(true);
-      toast.success("Borrado con Exito", {
+      toast.success("Calculo con Exito", {
         position: "top-right",
         autoClose: 2000,
         hideProgressBar: false,
@@ -21,7 +23,7 @@ export const deleteDb = (id, setConsulta, toast) => {
       });
     })
     .catch(function (error) {
-      toast.error("Error!! No se pudo Borrar", {
+      toast.error("Error!! No Se Calculo", {
         position: "top-right",
         autoClose: 2000,
         hideProgressBar: false,

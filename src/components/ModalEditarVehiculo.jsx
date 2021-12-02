@@ -36,8 +36,8 @@ const ModalEditarVehiculo = ({item}) => {
 
   const submitForm = async (e) => {
       e.preventDefault();
-
-      await editarDb(formData,item.id);
+      let data=(formData.placa?formData:item);
+      await editarDb(data,item.id);
       handleClose();
       setConsulta(true);
     }
@@ -71,7 +71,7 @@ const ModalEditarVehiculo = ({item}) => {
             <div className="grid grid-cols-1 gap-2">
               <div>
                 <label className=" font-medium text-xl">Placa:</label>
-                <input defaultValue={item.placa} name='placa' placeholder='Placa' type="text" required className="text-sm w-full font-light rounded-lg h-7 pl-2 bg-gray-200" />
+                <input defaultValue={item.placa} name='placa' placeholder='Placa' type="text" required className="uppercase text-sm w-full font-light rounded-lg h-7 pl-2 bg-gray-200" />
               </div>
               <div>
                 <label className=" font-medium text-xl">Nombre Dueño:</label>

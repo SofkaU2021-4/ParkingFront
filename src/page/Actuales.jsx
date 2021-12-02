@@ -17,8 +17,10 @@ const Actuales = () => {
     return (
         <div className= "mx-auto max-w-screen-xl flex flex-wrap justify-evenly   ">
         {vehiculos.map((item)=>{
-            if (item.placa.toUpperCase().includes(busqueda)|| item.dueno.toUpperCase().includes(busqueda)) {
+            if (item.estado) {
+                if (item.placa.toUpperCase().includes(busqueda)|| item.dueno.toUpperCase().includes(busqueda)) {
                 return (<Cards key={item.id}  item={item} />)
+                }
             }
             return null;
         })}

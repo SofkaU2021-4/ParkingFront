@@ -36,7 +36,6 @@ const ModalNuevoVehiculo = () => {
 
   const submitForm = async (e) => {
       e.preventDefault();
-
       await postDb(formData);
       handleClose();
       setConsulta(true);
@@ -44,7 +43,7 @@ const ModalNuevoVehiculo = () => {
 
   return (
     <div >
-      <button className=" bg-blue-500  text-white rounded-3xl px-6 py-3" onClick={handleClickOpen('paper')}>Nuevo vehiculo  <i className="fas fa-plus-circle fa-lg ml-4"></i></button>
+      <button className=" hover:bg-blue-700  bg-blue-500  text-white rounded-3xl px-6 py-3" onClick={handleClickOpen('paper')}>Nuevo vehiculo  <i className="fas fa-plus-circle fa-lg ml-4"></i></button>
         <Dialog
           className= "bg-black bg-opacity-50"
           open={open}
@@ -71,7 +70,7 @@ const ModalNuevoVehiculo = () => {
             <div className="grid grid-cols-1 gap-2">
               <div>
                 <label className=" font-medium text-xl">Placa:</label>
-                <input name='placa' placeholder='Placa' type="text" required className="text-sm w-full font-light rounded-lg h-7 pl-2 bg-gray-200" />
+                <input name='placa' placeholder='Placa' type="text" required className=" uppercase text-sm w-full font-light rounded-lg h-7 pl-2 bg-gray-200" />
               </div>
               <div>
                 <label className=" font-medium text-xl">Nombre Dueño:</label>

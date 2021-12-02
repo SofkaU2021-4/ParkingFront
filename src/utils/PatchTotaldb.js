@@ -1,11 +1,11 @@
 import axios from "axios";
 
-export const editarDb = (item, id) => {
+export const PatchTotaldb = (item) => {
   const options = {
     method: "PATCH",
-    url: "http://localhost:8080/api/vehiculo",
+    url: "http://localhost:8080/api/vehiculo/valor",
     headers: { "Content-Type": "application/json" },
-    data: { id: id, placa: item.placa.toUpperCase(), dueno: item.dueno },
+    data: item,
   };
 
   axios
